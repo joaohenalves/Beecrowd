@@ -21,12 +21,12 @@ int main() {
     for(i = 0; i < n; i++) {
         for(j = 0; j < m; j++) {
             if(grid[i][j] == 1) {
-                minDist = 999;
+                minDist = min(i, j);
                 for(k = 0; k < 3; k++) {
                     ii = i + si[k];
                     jj = j + sj[k];
                     if(ii >= 0 && jj >= 0)
-                        minDist = min(min(minDist, grid[ii][jj]), min(i, j));
+                        minDist = min(minDist, grid[ii][jj]);
                 }
                 grid[i][j] = minDist + 1;
                 exists[minDist + 1] = 1;
