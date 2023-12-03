@@ -3,7 +3,7 @@ using namespace std;
 
 typedef long long ll;
 
-vector<pair<int, int> > tree(112345, make_pair(-1, 0));
+vector<pair<int, int> > tree(112345);
 int n, depth[112345];
 
 int findDepth(int node) {
@@ -32,6 +32,7 @@ int main() {
     while(cin >> n, n) {
         for(int i = 1; i < n; i++) depth[i] = -1;
         depth[0] = 0;
+        tree[0].first = -1;
         for(int i = 1; i < n; i++) {
             cin >> v >> cost;
             tree[i] = make_pair(v, cost);
