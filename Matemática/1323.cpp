@@ -5,13 +5,8 @@ int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     int n;
-    int memo[112];
-    memo[0] = 0;
-    for(int i = 1; i <= 100; i++) {
-        memo[i] = memo[i - 1] + i * i;
-    }
     while(cin >> n, n) {
-        cout << memo[n] << "\n";
+        cout << (n * (n + 1) * (2 * n + 1)) / 6 << "\n";
     }
     return 0;
 }
