@@ -1,9 +1,3 @@
-/* Técnica bem interessante aqui utilizada, tomamos vantagem de que
-o cavalo é uma peça que consegue chegar em qualquer casa do tabuleiro
-e que o grafo é completo, portanto usamos a "simetria do tabuleiro", calculando
-a bfs para somente metade dos vértices do grafo (talvez seja possível calcular somente para 1/8 do grafo). 
-Por exemplo, a distância da casa a1 para a2 é a mesma distância da casa h8 para h7. */
-
 #include <bits/stdc++.h>
 using namespace std;
 
