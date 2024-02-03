@@ -1,7 +1,3 @@
-/*Exercício com enunciado problemático que admite dois tipos de soluções diferentes que não levam à
-mesma resposta em todos os casos. O outro jeito(muito melhor do que o jeito implementado aqui) é contar
-os componentes conexos do grafo e uma resposta "-1" se daria se o grafo conter apenas 1 componente conexo.*/
-
 #include <bits/stdc++.h>
 using namespace std;
 
