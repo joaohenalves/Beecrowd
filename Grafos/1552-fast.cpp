@@ -1,8 +1,3 @@
-/*Explicação: um algoritmo quadrático simples para encontrar uma árvore geradora mínima
-como implementado aqui é mais eficiente pois com um grafo completo, como é o grafo
-deste exercício, calcula a mst em tempo O(V^2) e se for usado algoritmo de prim ou kruskal a complexidade do algoritmo
-que é O(E log V), com E sendo o número de arestas, fica na verdade O(V^2 log V). Com esse algoritmo eliminamos o fator log da complexidade.*/
-
 #include <bits/stdc++.h>
 using namespace std;
 
