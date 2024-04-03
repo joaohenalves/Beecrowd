@@ -1,23 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define MAX 123
-#define INF 1e9
+#define MAX 112
+#define INF 112345678
 
-int n;
-int dist[MAX][MAX][MAX];
+int n, dist[MAX][MAX], queries[MAX][MAX][MAX];
+
 
 void floydWarshall() {
-    int i, j, k, l;
-    for (k = 0; k < n; k++) {
-        for (i = 0; i < n; i++) {
-            for (j = 0; j < n; j++) {
-                for(l = 0; l < n; l++) {
-                    if (dist[i][j][l] > (dist[i][k][l] + dist[k][j][l])
-                        && (dist[k][j][l] != INF
-                            && dist[i][k][l] != INF) && k <= l)
-                        dist[i][j][l] = dist[i][k][l] + dist[k][j][l];
-                }
+    int i, j, k;
+    for(k = 0; k < n; k++) {
+        for(i = 0; i < n; i++) {
+            for(j = 0; j < n; j++) {
+                if(dist[i][j] > dist[i][k] + dist[k][j]) {
+                    dist[i][j] = dist[i][k] + dist[k][j];
+				}
+				queries[i][j][k] = dist[i][j];
             }
         }
     }
@@ -26,29 +24,24 @@ void floydWarshall() {
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
-    cout.tie(0);
-    int m, v1, v2, cost, q;
+    int i, j, k, m, u, v, w, q;
     while(cin >> n >> m) {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                for (int k = 0; k < n; k++) {
-                    dist[i][j][k] = (i == j ? 0 : INF);
-                }
+        for(i = 0; i < n; i++) {
+            for(j = 0; j < n; j++) {
+                dist[i][j] = (i == j ? 0 : INF);
             }
         }
-        for(int i = 0; i < m; i++) {
-            cin >> v1 >> v2 >> cost;
-            v1--; v2--;
-            for(int k = 0; k < n; k++) {
-                dist[v1][v2][k] = dist[v2][v1][k] = cost;
-            }
+        for(i = 0; i < m; i++) {
+            cin >> u >> v >> w;
+            u--; v--;
+            dist[u][v] = dist[v][u] = w;
         }
-        cin >> q;
         floydWarshall();
-        for(int k = 0; k < q; k++) {
-            cin >> v1 >> v2 >> cost;
-            v1--; v2--; cost--;
-            cout << (dist[v1][v2][cost] == INF ? -1 : dist[v1][v2][cost]) << "\n";
+        cin >> q;
+        while(q--) {
+            cin >> u >> v >> w;
+            u--; v--; w--;
+            cout << (queries[u][v][w] == INF ? -1 : queries[u][v][w]) << "\n";
         }
     }
     return 0;
