@@ -14,8 +14,8 @@ void floydWarshall() {
             for(j = 0; j < n; j++) {
                 if(dist[i][j] > dist[i][k] + dist[k][j]) {
                     dist[i][j] = dist[i][k] + dist[k][j];
-				}
-				queries[i][j][k] = dist[i][j];
+		}
+		queries[i][j][k] = dist[i][j];
             }
         }
     }
