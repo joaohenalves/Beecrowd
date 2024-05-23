@@ -17,7 +17,6 @@ bool check(ll x) {
     return ans >= target;
 }
 
-
 ll binSearch() {
     ll mid, inf = 0, sup = (1ll << 61);
     while(inf < sup) {
