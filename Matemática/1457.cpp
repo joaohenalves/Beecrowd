@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 long long fact(int a, int b, int k) {
     if(a - (b * k) <= 0) return 1;
     return (a - (k * b)) * fact(a, b, k + 1);
