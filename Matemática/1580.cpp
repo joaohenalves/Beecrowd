@@ -5,6 +5,7 @@ using namespace std;
 #define MOD 1000000007
 typedef long long ll;
 
+
 ll fastBinExp(ll a, ll b) {
     if(b == 0) return 1;
     if(b & 1) return (a * fastBinExp(a, b - 1)) % MOD;
