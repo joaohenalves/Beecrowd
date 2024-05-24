@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 vector<vector<int> > graph;
 vector<int> result;
 bitset<26> visited;
