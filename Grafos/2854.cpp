@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 unordered_map<string, pair<bool, vector<string> > > graph;
 
 void dfs(string name) {
