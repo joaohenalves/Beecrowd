@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 constexpr double INF = 1e7;
 int n;
 vector<pair<double, double> > p(512);
