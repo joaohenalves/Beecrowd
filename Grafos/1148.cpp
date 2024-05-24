@@ -6,6 +6,7 @@ using namespace std;
 typedef pair<int, int> ii;
 typedef vector<vector<ii> > vvii;
 
+
 int dist[512][512];
 bool country[512][512];
 int n, m;
