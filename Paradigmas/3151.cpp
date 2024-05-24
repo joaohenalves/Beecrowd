@@ -7,7 +7,6 @@ bool comp(dd a, dd b) {
     return a.first > b.first;
 }
 
-
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
