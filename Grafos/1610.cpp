@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 vector<unordered_set<int> > graph(11234);
 int n, color[11234];
 
