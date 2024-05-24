@@ -3,6 +3,7 @@ using namespace std;
 
 #define MAX 41234
 
+
 vector<tuple<int, int, int> > edges;
 int n, m, parent[MAX], nodeRank[MAX];
 
