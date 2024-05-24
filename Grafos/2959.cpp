@@ -1,39 +1,46 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, m, dist[412][412];
+#define MAX 412
 
-void floydWarshall() {
-    int i, j, k;
-    for(k = 0; k < n; k++) {
-        for(i = 0; i < n; i++) {
-            for(j = 0; j < n; j++) {
-                dist[i][j] |= (dist[i][k] & dist[k][j]);
-            }
-        }
+int n, m, nodeRank[MAX], parent[MAX];
+
+int findSet(int u) {
+    if(parent[u] == u) return u;
+    return parent[u] = findSet(parent[u]);
+}
+
+void unionSets(int u, int v) {
+    u = findSet(u);
+    v = findSet(v);
+    if(nodeRank[u] > nodeRank[v]) {
+        parent[v] = u;
+    } else {
+        parent[u] = v;
+        if(nodeRank[u] == nodeRank[v]) nodeRank[v]++;
     }
 }
 
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
-    int i, j, q, u, v;
+    int u, v, q;
     cin >> n >> m >> q;
-    for(i = 0; i < n; i++) {
-        for(j = 0; j < n; j++) {
-            dist[i][j] = i == j;
-        }
+    for(int i = 0; i < n; i++) {
+        parent[i] = i;
+        nodeRank[i] = 0;
     }
-    for(i = 0; i < m; i++) {
+    for(int i = 0; i < m; i++) {
         cin >> u >> v;
         u--; v--;
-        dist[u][v] = dist[v][u] = 1;
+        if(findSet(u) != findSet(v)) {
+            unionSets(u, v);
+        }
     }
-    floydWarshall();
     while(q--) {
         cin >> u >> v;
         u--; v--;
-        cout << (dist[u][v] == 1 ? "Lets que lets" : "Deu ruim") << "\n";
+        cout << (findSet(u) == findSet(v) ? "Lets que lets" : "Deu ruim") << "\n";
     }
     return 0;
 }
