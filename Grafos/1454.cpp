@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 #define INF 1e9
 
 int dist[112][112];
