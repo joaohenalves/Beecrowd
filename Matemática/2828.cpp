@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 #define MAX 100001
 #define MOD 1000000007
 typedef long long ll;
