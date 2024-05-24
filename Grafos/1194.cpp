@@ -5,6 +5,7 @@ unordered_map<char, int> k;
 string prfx, infx;
 int idx;
 
+
 typedef struct Node {
     char c;
     struct Node *left;
