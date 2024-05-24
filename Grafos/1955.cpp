@@ -9,7 +9,9 @@ int dfs(int v, int c) {
     marked[v] = c;
     for(const auto &u : graph[v]) {
         if(marked[u] == c) return 1;
-        else if(marked[u] == -1) dfs(u, c ^ 1);
+        else if(marked[u] == -1) {
+            if(dfs(u, c ^ 1)) return 1;
+        }
     }
     return 0;
 }
