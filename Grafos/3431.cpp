@@ -5,6 +5,7 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 typedef stack<int> st;
 
+
 vvi graph;
 vvi graphInv;
 vi marked;
