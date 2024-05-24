@@ -1,9 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 constexpr int INF = 112345678;
 typedef pair<int, int> ii;
 typedef tuple<int, int, int> t;
+
 
 vector<vector<int> > graph(1123);
 int n, m, c, s, e, price[1123], dist[1123][112], weight[1123][1123];
