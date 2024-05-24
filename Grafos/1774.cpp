@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 typedef pair<int, int> pii;
 bitset<70> onTree;
 
