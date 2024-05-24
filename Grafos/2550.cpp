@@ -1,61 +1,59 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-constexpr int MAX = 1123;
-constexpr int MAX_EDGES = MAX * (MAX - 1) / 2;
+#define MAX 1123
+#define MAX_E 1123456
+typedef tuple<int, int, int> iii;
 
-vector<tuple<int, int, int> > edges;
-int n, m, parent[MAX], nodeRank[MAX];
+int n, m, nodeRank[MAX], parent[MAX];
+vector<iii> edges(MAX_E);
 
 int findSet(int u) {
-    return parent[u] == u ? u : (parent[u] = findSet(parent[u]));
+    if(parent[u] == u) return u;
+    return parent[u] = findSet(parent[u]);
 }
 
 void unionSets(int u, int v) {
     u = findSet(u);
     v = findSet(v);
-    if(nodeRank[u] < nodeRank[v]) parent[u] = v;
-    else {
+    if(nodeRank[u] > nodeRank[v]) {
         parent[v] = u;
-        if(nodeRank[u] == nodeRank[v]) nodeRank[u]++;
+    } else {
+        parent[u] = v;
+        if(nodeRank[u] == nodeRank[v]) nodeRank[v]++;
     }
 }
 
 int kruskal() {
-    int u, v, cost, mst = 0;
-    for(int i = 0; i < n; i++) parent[i] = i;
-    sort(edges.begin(), edges.end());
-    for(const auto &[cost, u, v] : edges) {
+    int u, v, w, ans = 0, t = n;
+    for(int i = 0; i < n; i++) {
+        parent[i] = i;
+        nodeRank[i] = 0;
+    }
+    sort(edges.begin(), edges.begin() + m);
+    for(int i = 0; i < m; i++) {
+        tie(w, u, v) = edges[i];
         if(findSet(u) != findSet(v)) {
             unionSets(u, v);
-            mst += cost;
+            t--;
+            ans += w;
         }
     }
-    return mst;
+    return t == 1 ? ans : -1;
 }
 
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
-    cout.tie(0);
-    int u, v, cost, total, flag;
-    edges.reserve(MAX_EDGES);
+    int u, v, w, ans;
     while(cin >> n >> m) {
-        flag = 0;
         for(int i = 0; i < m; i++) {
-            cin >> u >> v >> cost;
-            u--; v--; 
-            edges.emplace_back(cost, u, v);
+            cin >> u >> v >> w;
+            u--; v--;
+            edges[i] = make_tuple(w, u, v);
         }
-        total = kruskal();
-        for(int j = 1; j < n; j++) {
-            if(parent[j] != parent[0]) {
-                flag = 1;
-                break;
-            }
-        }
-        cout << (flag ? "impossivel" : to_string(total)) << "\n";
-        edges.clear();
+        ans = kruskal();
+        cout << (ans == -1 ? "impossivel" : to_string(ans)) << "\n";
     }
     return 0;
 }
