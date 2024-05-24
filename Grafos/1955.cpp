@@ -16,6 +16,7 @@ int dfs(int v, int c) {
     return 0;
 }
 
+
 int colorGraph() {
     for(int i = 0; i < n; i++) {
         if(marked[i] == -1) {
