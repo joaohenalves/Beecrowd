@@ -44,7 +44,6 @@ int dijkstra(int start, int target) {
             }
         }
     }
- 
     return dist[target];
 }
 
