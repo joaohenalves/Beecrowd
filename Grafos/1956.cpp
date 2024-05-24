@@ -12,6 +12,7 @@ int findSet(int u) {
     return parent[u] == u ? u : (parent[u] = findSet(parent[u]));
 }
 
+
 void unionSets(int u, int v) {
     u = findSet(u);
     v = findSet(v);
