@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 int n, m;
 vector<vector<int> > graph(21);
 int visited[21];
