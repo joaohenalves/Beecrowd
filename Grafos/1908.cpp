@@ -5,6 +5,7 @@ using namespace std;
 #define MAX_K 1123
 typedef pair<int, int> ii;
 
+
 vector<vector<int>> graph(MAX);
 vector<vector<int>> camp(MAX_K);
 int n, k, vis[MAX], line[MAX_K];
