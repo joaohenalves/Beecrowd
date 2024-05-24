@@ -1,3 +1,5 @@
+//verifica se uma lista de graus de vértices de um grafo não dirigido forma um grafo
+
 #include <bits/stdc++.h>
 using namespace std;
 
