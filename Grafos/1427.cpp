@@ -2,7 +2,6 @@
 using namespace std;
 
 #define INF 1e9
-
 typedef pair<int, int> ii;
 
 unordered_map<string, int> names;
