@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 vector<bool> visited(1048576, false);
 vector<string> grid (1024);
 int n, m;
