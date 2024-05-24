@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 vector<pair<int, vector<int> > > graph;
 bitset<500> visited;
 int minAge;
