@@ -6,7 +6,6 @@ using namespace std;
 
 int n, dist[MAX][MAX], queries[MAX][MAX][MAX];
 
-
 void floydWarshall() {
     int i, j, k;
     for(k = 0; k < n; k++) {
