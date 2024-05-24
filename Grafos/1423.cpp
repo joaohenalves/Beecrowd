@@ -8,6 +8,7 @@ typedef pair<int, int> ii;
 vector<vector<ii> > graph(112);
 int a, b, m, l, k, dist[112][11][512];
 
+
 int dijkstra() {
     priority_queue<t, vector<t>, greater<t> > pq;
     int v, dv, td, tu, tk, tr;
