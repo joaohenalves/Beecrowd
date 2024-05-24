@@ -3,6 +3,8 @@ using namespace std;
 
 constexpr int MAX = 512;
 
+
+
 vector<tuple<int, int, int> > edges;
 int n, m, parent[MAX], nodeRank[MAX];
 
