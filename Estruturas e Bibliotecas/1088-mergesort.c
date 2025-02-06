@@ -6,7 +6,7 @@
 int ans;
 
 void merge(int arr[], int start, int mid, int end) {
-    int *aux_arr = malloc(end - start + 1 * sizeof(int));
+    int *aux_arr = malloc((end - start + 1) * sizeof(int));
     int i = start;
     int j = mid + 1;
     int k = 0;
