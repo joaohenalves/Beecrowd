@@ -1,16 +1,16 @@
-# 🧩 Beecrowd — Soluções de Problemas
+# 🧩 Beecrowd — Problem Solutions
 
-Repositório com minhas soluções para problemas da plataforma **[Beecrowd](https://judge.beecrowd.com/)** (antiga URI Online Judge), desenvolvidas com a motivação de aprender e praticar diferentes tópicos de algoritmos e estruturas de dados, como parte da minha trajetória na programação competitiva.
+A collection of my solutions to programming problems from **[Beecrowd](https://judge.beecrowd.com/)** (formerly URI Online Judge), developed to learn and practice different topics in algorithms and data structures throughout my journey as a competitive programmer.
 
-## 📁 Organização
+## 📁 Organization
 
-As soluções estão organizadas por categorias, seguindo a classificação da plataforma:
+Solutions are organized by categories, following the platform's classification:
 
-- **Iniciante**
+- **Beginner**
 - **Ad-hoc**
 - **Strings**
-- **Estruturas e Bibliotecas**
-- **Matemática**
-- **Grafos**
-- **Geometria Computacional**
-- **Paradigmas**
+- **Data Structures and Libraries**
+- **Mathematics**
+- **Graphs**
+- **Computational Geometry**
+- **Paradigms**
